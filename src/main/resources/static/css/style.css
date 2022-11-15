@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#topo {
+  background-color: red;
+}
+
+#navbarSupportedContent a {
+  color: #252525;
+  font-weight: bold;
+  text-transform: up;
+}
+#navbarSupportedContent a {
+  color: #444;
+  font-weight: bold;
+}
+
+.banner {
+  background: #0f0c29; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+#banner{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formSize{
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  box-shadow: 2px 2px 5px   black;
+  border-radius: 5px;
+}
+

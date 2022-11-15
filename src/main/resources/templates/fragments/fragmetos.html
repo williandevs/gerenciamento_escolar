@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Willian Figueiredo">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- icons -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css">
+
+    <!-- CSS Boostrap -->
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <!-- Css -->
+    <link rel="stylesheet" href="css/style.css">
+
+   
+    <title>Agendamento Aluno</title>
+</head>
+
+<body>
+
+    <header th:fragment="cabecalho">
+
+        <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #ddd;">
+            <div class="container">
+                <a class="navbar-brand" th:href="@{/}"><img src="img/logo.png" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav d-flex justify-content-end">
+                        <li class="nav-item">
+                            <!-- vem do  controller HomeController -->
+                            <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- Vem do controller AlunoController -->
+                            <a class="nav-link" th:href="@{inserirAluno}">Cadastrar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pesquisar</a>
+                    </ul>
+                    <button  class="btn" type="submit"><i class="bi bi-door-open-fill"
+                            style="font-size: 25px;"></i></button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <footer th:fragment="rodape">
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="https://williamdev.com.br" target="_blank">williamdevs.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+
+    <script src="/webjars/jquery/3.6.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

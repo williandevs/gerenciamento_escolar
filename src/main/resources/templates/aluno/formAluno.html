@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="author" content="Willian Figueiredo">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- icons -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css">
+
+
+    <!-- CSS Boostrap -->
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <!-- Css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Formulario Aluno</title>
+</head>
+
+<body>
+
+    <div th:replace="fragments/fragmetos :: cabecalho"></div>
+
+
+    <section>
+        <div class="container  mt-5 mb-5 formSize">
+            <h2>CADATRO NOVO ALUNO</h2>
+            <div class="row">
+                <div class="col-sm form-group">
+                    <form method="post" action="/InsertAlunos" th:object="${aluno}">
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome" placeholder="DIGITE SEU NOME ..." th:field="*{nome}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="curso" class="form-label">cursos</label>
+                                <select class="form-select"  aria-label="Default select example" th:field="*{curso}">
+
+                                    <option th:each="curso: ${T( br.willliandevs.students.enums.Curso).values()}"
+                                        th:value="${curso}" th:text="${curso}"></option>
+
+                                </select>
+                        </div>
+
+                        <!-- Matricula -->
+
+                        <div class="mb-3">
+                            <label for="matricula">Matricula</label>
+                            <input type="text" class="form-control" id="matricula" th:field="*{matricula}">
+                            <br>
+                            <button onclick="gerarMatricula()" type="button" class="btn btn-dark">Gerar
+                                Matrícula</button>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cursos" class="form-label">Status</label>
+
+                            <select class="form-select" th:field="*{status}" aria-label="Default select example">
+
+                                <option th:each="status: ${T( br.willliandevs.students.enums.Status).values()}"
+                                    th:value="${status}" th:text="${status}" th:field="*{status}"></option>
+
+                            </select>
+                        </div>
+
+                        <!-- Turno -->
+
+                        <div class="mb-3">
+                            <label for="turno" class="form-label">turno</label>
+                            <input type="text" class="form-control" id="turno" placeholder="Manha..." th:field="*{turno}">
+                        </div>
+
+
+                        <div class="row">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-sm">Cadastrar</button>
+                                <a th:href="@{/}" type="button" class="btn btn-secondary btn-sm"> Voltar </a>
+                            </div>
+
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </section>
+    <div th:replace="fragments/fragmetos :: rodape"></div>
+
+    <script src="/webjars/jquery/3.6.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
